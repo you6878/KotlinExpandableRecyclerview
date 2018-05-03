@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import kotlinx.android.synthetic.main.list_header.view.*
 
 
 import java.util.ArrayList
@@ -98,14 +99,9 @@ class ExpandableListAdapter(private val data: MutableList<Item>) : RecyclerView.
     }
 
     private class ListHeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var header_title: TextView
-        var btn_expand_toggle: ImageView
+        var header_title: TextView = itemView.header_title
+        var btn_expand_toggle: ImageView = itemView.btn_expand_toggle
         var refferalItem: Item? = null
-
-        init {
-            header_title = itemView.findViewById<View>(R.id.header_title) as TextView
-            btn_expand_toggle = itemView.findViewById<View>(R.id.btn_expand_toggle) as ImageView
-        }
     }
 
 
